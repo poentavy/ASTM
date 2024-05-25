@@ -10,7 +10,12 @@ const Dialog = DialogPrimitive.Root
 
 const DialogTrigger = DialogPrimitive.Trigger
 
-const DialogPortal: React.FC<DialogPrimitive.DialogPortalProps> = ({
+interface CustomDialogPortalProps extends DialogPrimitive.DialogPortalProps {
+  className?: string;
+}
+
+const DialogPortal: React.FC<CustomDialogPortalProps> = ({
+  className,
   ...props
 }) => (
   <DialogPrimitive.Portal {...props} />
